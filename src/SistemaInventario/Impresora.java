@@ -20,9 +20,11 @@ public class Impresora extends Equipos_de_Computo {
     public void añadirImpresora(int id, String modelo, String marca, int ano, String serial_number, String estado, int stock, String tipo_impresion, String consumible, int velocidad_impresion) {
         Impresora impresora = new Impresora(id, modelo, marca, ano, serial_number, estado, stock, tipo_impresion, consumible, velocidad_impresion);
         ListaDeEquiposDeComputo.add(impresora);
+        mergeSort(ListaDeEquiposDeComputo);
     }
 
     public void ListarImpresora() {
+        mergeSort(ListaDeEquiposDeComputo);
         System.out.println("Impresora { " + "ID: " + getId() +
                 " \nModelo: " + getModelo() +
                 " \nMarca: " + getMarca() +
@@ -60,6 +62,8 @@ public class Impresora extends Equipos_de_Computo {
             if (equipo instanceof Impresora && equipo.getId() == id) {
                 ListaDeEquiposDeComputo.remove(equipo);
                 eliminado = true;
+                //se ordena la lista de equipos
+                mergeSort(ListaDeEquiposDeComputo);
                 break;
             }
         }
@@ -72,12 +76,12 @@ public class Impresora extends Equipos_de_Computo {
     public Impresora buscarImpresoras(int id) throws Exception {
         for (Equipos_de_Computo equipo : ListaDeEquiposDeComputo) {
             if (equipo instanceof Impresora && equipo.getId() == id) {
+                //se ordena la lista de equipos
+                mergeSort(ListaDeEquiposDeComputo);
                 return (Impresora) equipo;
             }
         }
         throw new Exception("No se encontró una impresora con el ID especificado.");
     }
-
-
 }
 

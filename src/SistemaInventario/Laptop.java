@@ -28,6 +28,7 @@ public class Laptop extends Equipos_de_Computo{
     }
 
     public void ListarLaptop(){
+        mergeSort(ListaDeEquiposDeComputo);
         for (Equipos_de_Computo equipo : ListaDeEquiposDeComputo) {
             if (equipo instanceof Laptop) {
                 Laptop laptop = (Laptop) equipo;

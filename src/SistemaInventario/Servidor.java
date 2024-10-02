@@ -35,7 +35,10 @@ public class Servidor extends Equipos_de_Computo{
     public void setTipo_instalacion(String tipo_instalacion) {
         this.tipo_instalacion = tipo_instalacion;
     }
+
     public void ListarServidor(){
+        mergeSort(ListaDeEquiposDeComputo);
+
         System.out.println("Laptop { " + "ID: " + getId() +
                 " \nModelo: " + getModelo() +
                 " \nMarca: " + getMarca() +
@@ -96,6 +99,7 @@ public class Servidor extends Equipos_de_Computo{
             throw new NoSuchElementException("No se encontró un servidor con el ID especificado.");
         }
     }
+
     public void eliminarServidor(int id) throws NoSuchElementException {
         Iterator<Equipos_de_Computo> iterador = ListaDeEquiposDeComputo.iterator();
         boolean eliminado = false;

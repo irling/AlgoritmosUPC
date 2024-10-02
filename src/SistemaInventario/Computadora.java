@@ -40,6 +40,7 @@ public class Computadora extends Equipos_de_Computo {
         ListaDeEquiposDeComputo.add(computadora);
     }
     public void ListarComputadoras(){
+        mergeSort(ListaDeEquiposDeComputo);
         System.out.println("Computadora { " + "ID: " + getId() +
                 " \nModelo: " + getModelo() +
                 " \nMarca: " + getMarca() +
